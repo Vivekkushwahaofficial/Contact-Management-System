@@ -1,23 +1,29 @@
 # 📇 Contact Management System (Full Stack)
 
-A full-stack Contact Management System built using **Spring Boot**, **React**, and **H2 Database**.
+A full-stack Contact Management System built using **Spring Boot**, **React**, **Docker**, and deployed on **Render Cloud**.
 
-This project demonstrates REST API development, frontend-backend integration, production build deployment, and full Git workflow.
+This project demonstrates REST API development, frontend-backend integration, Docker containerization, and real cloud deployment.
 
 ---
 
-## 🚀 Live Architecture
+## 🌍 Live Demo
 
-The application runs in two modes:
+🔗 https://contact-management-system-2ydt.onrender.com/
 
-### 🧩 Development Mode
-- Frontend → http://localhost:3000  
-- Backend → http://localhost:8080  
+> ⚠ Note: The app uses H2 in-memory database. Data resets when the server restarts (Render free tier behavior).
 
-### 🚀 Production Mode (Single Port)
-- Frontend + Backend → http://localhost:8080  
+---
 
-In production mode, the React build is served directly by Spring Boot.
+## 🏗 Architecture
+
+This application follows a **single-port full-stack architecture**:
+
+- React frontend is built and served from Spring Boot
+- Spring Boot handles REST APIs
+- Docker container used for deployment
+- Hosted on Render Cloud
+
+Everything runs from one public URL.
 
 ---
 
@@ -35,10 +41,10 @@ In production mode, the React build is served directly by Spring Boot.
 - Fetch API  
 - Materialize CSS  
 
-### 🔹 Tools
+### 🔹 DevOps & Deployment
+- Docker  
+- Render Cloud  
 - Git & GitHub  
-- VS Code  
-- Postman  
 
 ---
 
@@ -47,51 +53,60 @@ In production mode, the React build is served directly by Spring Boot.
 - ✅ Add new contact  
 - ✅ View all contacts  
 - ✅ REST API integration  
-- ✅ CORS configuration  
 - ✅ Real-time UI updates  
-- ✅ Production build integration  
-- ✅ Single-port deployment  
-- ✅ Full-stack architecture  
+- ✅ Full-stack integration  
+- ✅ Docker containerization  
+- ✅ Cloud deployment (Render)  
+- ✅ Single public URL  
 
 ---
 
 ## 📂 Project Structure
 
 ```
-crm/
+Contact-Management-System/
 ├── src/ (Spring Boot Backend)
 │   └── main/
 │       └── resources/
 │           └── static/ (React production build)
-├── pom.xml
-├── client/ (React Frontend Source Code)
+├── client/ (React Source Code)
 │   ├── src/
 │   ├── public/
 │   └── package.json
+├── Dockerfile
+├── pom.xml
 └── README.md
 ```
 
 ---
 
-## ⚙️ How To Run This Project
+## ⚙️ How To Run Locally
+
+### 🔹 1. Clone Repository
+
+```bash
+git clone https://github.com/Vivekkushwahaofficial/Contact-Management-System.git
+cd Contact-Management-System
+```
 
 ---
 
-### 🔹 Option 1 — Development Mode
-
-#### 1️⃣ Run Backend
+### 🔹 2. Run Backend
 
 ```bash
 mvn spring-boot:run
 ```
 
-Backend runs on:
-
+Open:
 ```
 http://localhost:8080
 ```
 
-#### 2️⃣ Run Frontend
+---
+
+### 🔹 3. Development Mode (Optional)
+
+Run React separately:
 
 ```bash
 cd client
@@ -99,39 +114,27 @@ npm install
 npm start
 ```
 
-Frontend runs on:
-
+Frontend:
 ```
 http://localhost:3000
 ```
 
----
-
-### 🔹 Option 2 — Production Mode (Single Port)
-
-#### 1️⃣ Build React App
-
-```bash
-cd client
-npm run build
-```
-
-#### 2️⃣ Copy build files into:
-
-```
-src/main/resources/static/
-```
-
-#### 3️⃣ Run Spring Boot
-
-```bash
-mvn spring-boot:run
-```
-
-Now open:
-
+Backend:
 ```
 http://localhost:8080
+```
+
+---
+
+## 🐳 Docker Deployment
+
+The project includes a Dockerfile.
+
+To build and run locally:
+
+```bash
+docker build -t contact-app .
+docker run -p 8080:8080 contact-app
 ```
 
 ---
@@ -139,35 +142,27 @@ http://localhost:8080
 ## 🔌 API Endpoints
 
 ### 📍 Get All Contacts
-
 ```
 GET /api/contacts
 ```
 
 ### 📍 Create Contact
-
 ```
 POST /api/contacts
-```
-
-### 📍 H2 Database Console
-
-```
-http://localhost:8080/h2-console
 ```
 
 ---
 
 ## 🧠 What I Learned
 
-- REST API development using Spring Boot  
-- Entity → Repository → Controller architecture  
-- Spring Data REST configuration  
-- Handling CORS issues  
-- React state management  
+- REST API development with Spring Boot  
+- Entity → Repository architecture  
+- React frontend integration  
 - Production build deployment  
-- Full-stack integration  
-- Git workflow and project structuring  
+- Docker containerization  
+- Cloud deployment using Render  
+- Git branching & rebasing  
+- Full-stack application lifecycle  
 
 ---
 
